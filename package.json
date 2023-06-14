@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "complete Node.js Guide",
+  "main": "first-app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "start-server":"node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/binarybabu420/Backend_Node_JS.git"
+  },
+  "author": "Sushant Verma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binarybabu420/Backend_Node_JS/issues"
+  },
+  "homepage": "https://github.com/binarybabu420/Backend_Node_JS#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

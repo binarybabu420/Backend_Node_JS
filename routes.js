@@ -50,6 +50,7 @@ return res.end();
 // res.write('/<html>')
 return res.end()
  }
+ 
 // else if(req.url==='/node')
 // {
 //     res.setHeader('Content-Type','node')
@@ -61,4 +62,7 @@ return res.end()
 // }
 //process.exit();
 };
-module.exports=requestHandler
+module.exports={
+    handler:requestHandler,
+    someText:'some hard coded text'
+}
