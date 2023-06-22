@@ -11,13 +11,26 @@ router.post('/uss',(req,res,next)=>
 {
     console.log(req.body.username)
 //localStorage.setItem('username',req.body.username);
-fs.appendFile('./message',req.body.username,(err)=>
+fs.appendFile('./message'," "+req.body.username+":",(err)=>
 {
     if(err)
     throw err;
 });
 console.log(req.body);
-res.send('<form action="/cht/user" method="POST"><label for="chat">chat</label><input name="chat" id="chat"><button type="submit">send</button></form>');
+fs.readFile('./message',(err,input)=>{
+    if(err)
+    {
+        throw err;
+       }
+    else
+    {
+        res.send(`<p>${input.toString()}</p><form action="/cht/user" method="POST"><label for="chat">chat</label><input name="chat" id="chat"><button type="submit">send</button></form>`);
+
+console.log(input.toString)
+    }
+
+})
+
 })
 
 router.post('/user',(req,res,next)=>{
@@ -28,8 +41,19 @@ fs.appendFile('./message',req.body.chat,(err)=>
     throw err;
 });
 console.log(req.body);
-res.send('<form action="/cht/user" method="POST"><label for="chat">chat</label><input name="chat" id="chat"><button type="submit">send</button></form>');
+fs.readFile('./message',(err,input)=>{
+    if(err)
+    {
+        throw err;
+       }
+    else
+    {
+        res.send(`<p>${input.toString()}</p><form action="/cht/user" method="POST"><label for="chat">chat</label><input name="chat" id="chat"><button type="submit">send</button></form>`);
 
+console.log(input.toString)
+    }
+
+})
 //res.redirect('/');
 
 });
